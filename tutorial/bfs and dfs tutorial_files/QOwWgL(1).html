@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://s.codepen.io/scriptonian/fullembedgrid/QOwWgL?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Javascript - Depth First Search</title>
+  
+  
+  
+  
+      <style>
+      body .gist .gist-file {
+    margin-bottom: 0;
+    border: 1px dashed #adb5bd;
+    border-radius: 0;
+}
+
+body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+}
+
+body .gist .blob-wrapper {
+    border-radius: 0;
+}
+
+body .gist .highlight {
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 14px;
+}
+
+body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body .gist tr:first-child td {
+    padding-top: 15px !important;
+}
+
+body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+    color: #ced4da;
+    background-color: #495057;
+    pointer-events: none;
+}
+
+body .gist .gist-meta {
+    display: none;
+}
+.gist-meta {
+    display: none;
+    border: none;
+}
+
+body .gist .gist-file {
+    margin-bottom: 10px;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  
+<!-- Fonts -->
+<link rel="stylesheet" type="text/css" href="./css(1)">
+
+<!-- 
+Theme Colors:
+https://github.com/lonekorean/gist-syntax-themes/tree/master/stylesheets
+
+Blog: http://codersblock.com/blog/customizing-github-gists/
+-->
+<link rel="stylesheet" type="text/css" href="./monokai.css">
+
+<!-- Gist Link -->
+<script src="./403045846a16c1d321fcf81639236359.js.download"></script><link rel="stylesheet" href="./gist-embed-d7f32d1731d95b9cb4d3c880c428c9e9.css"><div id="gist82510450" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-graph-es5-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-graph-es5-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-graph-es5-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>ES5 VERSION</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-graph-es5-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-en">DFS</span> <span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">v</span>, <span class="pl-smi">color</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-graph-es5-js-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>change the color to grey</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-graph-es5-js-LC4" class="blob-code blob-code-inner js-file-line">    color[v] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>grey<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-graph-es5-js-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>get its adjacency list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-graph-es5-js-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">var</span> curVertexAdjLst <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-graph-es5-js-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-graph-es5-js-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">var</span> that <span class="pl-k">=</span> <span class="pl-c1">this</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-graph-es5-js-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">curVertexAdjLst</span>.<span class="pl-c1">forEach</span>(<span class="pl-k">function</span>(<span class="pl-smi">listVertex</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-graph-es5-js-LC10" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(color[listVertex] <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-graph-es5-js-LC11" class="blob-code blob-code-inner js-file-line">            <span class="pl-smi">that</span>.<span class="pl-en">DFS</span>(listVertex, color);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-graph-es5-js-LC12" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-graph-es5-js-LC13" class="blob-code blob-code-inner js-file-line">    });</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-graph-es5-js-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>change the color to black. we are done</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-graph-es5-js-LC15" class="blob-code blob-code-inner js-file-line">    color[v] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-graph-es5-js-LC16" class="blob-code blob-code-inner js-file-line">},</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-graph-es5-js-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-graph-es5-js-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-en">DFSTraversal</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-graph-es5-js-LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">var</span> color <span class="pl-k">=</span> [],        </td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-graph-es5-js-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>set all vertices to white before search begin.</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-graph-es5-js-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-graph-es5-js-LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-graph-es5-js-LC23" class="blob-code blob-code-inner js-file-line">            color[<span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>[i]] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>;                    </td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-graph-es5-js-LC24" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-graph-es5-js-LC25" class="blob-code blob-code-inner js-file-line">    };</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-graph-es5-js-LC26" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>call the function to initialize colors</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-graph-es5-js-LC27" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-graph-es5-js-LC28" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>run through all the vertices</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-graph-es5-js-LC29" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-graph-es5-js-LC30" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(color[vertices[i]] <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-graph-es5-js-LC31" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">this</span>.<span class="pl-en">DFS</span>(vertices[i], color);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-graph-es5-js-LC32" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-graph-es5-js-LC33" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-graph-es5-js-LC34" class="blob-code blob-code-inner js-file-line">},</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-graph-es5-js-LC35" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>DFS with a stack instead of recursion</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-graph-es5-js-LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-en">depthFirstWithStack</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">startingVertex</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-graph-es5-js-LC37" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">var</span> color <span class="pl-k">=</span> [], </td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-graph-es5-js-LC38" class="blob-code blob-code-inner js-file-line">        stack <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Stack</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-graph-es5-js-LC39" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>set all vertices to white before search begin.</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-graph-es5-js-LC40" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span> <span class="pl-k">=</span> <span class="pl-k">function</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-graph-es5-js-LC41" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-graph-es5-js-LC42" class="blob-code blob-code-inner js-file-line">            color[<span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>[i]] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-graph-es5-js-LC43" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-graph-es5-js-LC44" class="blob-code blob-code-inner js-file-line">    };</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-graph-es5-js-LC45" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>call the function to initialize colors</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-graph-es5-js-LC46" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-graph-es5-js-LC47" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>putsh vertex onto stack</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-graph-es5-js-LC48" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">stack</span>.<span class="pl-c1">push</span>(startingVertex);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-graph-es5-js-LC49" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>continue doing this as long as the stack is not empty</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-graph-es5-js-LC50" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">while</span>(<span class="pl-k">!</span><span class="pl-smi">stack</span>.<span class="pl-en">isEmpty</span>()) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-graph-es5-js-LC51" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>get vertex in the front of stack</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-graph-es5-js-LC52" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">var</span> stackFrontVertex <span class="pl-k">=</span> <span class="pl-smi">stack</span>.<span class="pl-c1">pop</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-graph-es5-js-LC53" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(color[stackFrontVertex] <span class="pl-k">!==</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-graph-es5-js-LC54" class="blob-code blob-code-inner js-file-line">            color[stackFrontVertex] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>grey<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-graph-es5-js-LC55" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span>get its adjacency list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-graph-es5-js-LC56" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">var</span> frontVertexAdjLst <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(stackFrontVertex);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-graph-es5-js-LC57" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span>loop through list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-graph-es5-js-LC58" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">frontVertexAdjLst</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-graph-es5-js-LC59" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">if</span> (color[frontVertexAdjLst[i]] <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-graph-es5-js-LC60" class="blob-code blob-code-inner js-file-line">                    <span class="pl-smi">stack</span>.<span class="pl-c1">push</span>(frontVertexAdjLst[i]);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-graph-es5-js-LC61" class="blob-code blob-code-inner js-file-line">                }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-graph-es5-js-LC62" class="blob-code blob-code-inner js-file-line">            }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-graph-es5-js-LC63" class="blob-code blob-code-inner js-file-line">            color[stackFrontVertex] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-graph-es5-js-LC64" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-graph-es5-js-LC65" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-graph-es5-js-LC66" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/scriptonian/403045846a16c1d321fcf81639236359/raw/0af3bd262f90e051fd0e69cd2c2adaf769584581/graph-es5.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/scriptonian/403045846a16c1d321fcf81639236359#file-graph-es5-js">graph-es5.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-graph-modern-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-graph-modern-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-graph-modern-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>ES2015 VERSION</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-graph-modern-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-en">DFS</span>(<span class="pl-smi">v</span>, <span class="pl-smi">color</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-graph-modern-js-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>change the color to grey</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-graph-modern-js-LC4" class="blob-code blob-code-inner js-file-line">    color[v] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>grey<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-graph-modern-js-LC5" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>get its adjacency list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-graph-modern-js-LC6" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">var</span> curVertexAdjLst <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-graph-modern-js-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>go through the list, if you there unvisited linked </span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-graph-modern-js-LC8" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>follow the path to the end for each of</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-graph-modern-js-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">curVertexAdjLst</span>.<span class="pl-c1">forEach</span>((<span class="pl-smi">listVertex</span>) <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-graph-modern-js-LC10" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(color[listVertex] <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-graph-modern-js-LC11" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">this</span>.<span class="pl-en">DFS</span>(listVertex, color);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-graph-modern-js-LC12" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-graph-modern-js-LC13" class="blob-code blob-code-inner js-file-line">    });</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-graph-modern-js-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>change the color to black. we are done</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-graph-modern-js-LC15" class="blob-code blob-code-inner js-file-line">    color[v] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-graph-modern-js-LC16" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-graph-modern-js-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-graph-modern-js-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-en">DFSTraversal</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-graph-modern-js-LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">let</span> color <span class="pl-k">=</span> [],        </td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-graph-modern-js-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>set all vertices to white before search begin.</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-graph-modern-js-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span> <span class="pl-k">=</span> ()<span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-graph-modern-js-LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span>(<span class="pl-k">let</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-graph-modern-js-LC23" class="blob-code blob-code-inner js-file-line">            color[<span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>[i]] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>;                    </td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-graph-modern-js-LC24" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-graph-modern-js-LC25" class="blob-code blob-code-inner js-file-line">    };</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-graph-modern-js-LC26" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>call the function to initialize colors</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-graph-modern-js-LC27" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-graph-modern-js-LC28" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>run through all the vertices</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-graph-modern-js-LC29" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">for</span>(<span class="pl-k">let</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-graph-modern-js-LC30" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(color[vertices[i]] <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-graph-modern-js-LC31" class="blob-code blob-code-inner js-file-line">            <span class="pl-c1">this</span>.<span class="pl-en">DFS</span>(vertices[i], color);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-graph-modern-js-LC32" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-graph-modern-js-LC33" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-graph-modern-js-LC34" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-graph-modern-js-LC35" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-graph-modern-js-LC36" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>DFS with a stack instead of recursion</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-graph-modern-js-LC37" class="blob-code blob-code-inner js-file-line"><span class="pl-en">depthFirstWithStack</span>(<span class="pl-smi">startingVertex</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-graph-modern-js-LC38" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">let</span> color <span class="pl-k">=</span> [], </td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-graph-modern-js-LC39" class="blob-code blob-code-inner js-file-line">        stack <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Stack</span>(),</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-graph-modern-js-LC40" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>set all vertices to white before search begin.</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-graph-modern-js-LC41" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-graph-modern-js-LC42" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">for</span>(<span class="pl-k">let</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-graph-modern-js-LC43" class="blob-code blob-code-inner js-file-line">            color[<span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>[i]] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-graph-modern-js-LC44" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L45" class="blob-num js-line-number" data-line-number="45"></td>
+        <td id="file-graph-modern-js-LC45" class="blob-code blob-code-inner js-file-line">    };</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L46" class="blob-num js-line-number" data-line-number="46"></td>
+        <td id="file-graph-modern-js-LC46" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>call the function to initialize colors</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="file-graph-modern-js-LC47" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">initializeVertexColors</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="file-graph-modern-js-LC48" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>putsh vertex onto stack</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="file-graph-modern-js-LC49" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">stack</span>.<span class="pl-c1">push</span>(startingVertex);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="file-graph-modern-js-LC50" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>continue doing this as long as the stack is not empty</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="file-graph-modern-js-LC51" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">while</span>(<span class="pl-k">!</span><span class="pl-smi">stack</span>.<span class="pl-en">isEmpty</span>()) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="file-graph-modern-js-LC52" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>get vertex in the front of stack</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="file-graph-modern-js-LC53" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">let</span> stackFrontVertex <span class="pl-k">=</span> <span class="pl-smi">stack</span>.<span class="pl-c1">pop</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="file-graph-modern-js-LC54" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(color[stackFrontVertex] <span class="pl-k">!==</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="file-graph-modern-js-LC55" class="blob-code blob-code-inner js-file-line">            color[stackFrontVertex] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>grey<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="file-graph-modern-js-LC56" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span>get its adjacency list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="file-graph-modern-js-LC57" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">let</span> frontVertexAdjLst <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(stackFrontVertex);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="file-graph-modern-js-LC58" class="blob-code blob-code-inner js-file-line">            <span class="pl-c"><span class="pl-c">//</span>loop through list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="file-graph-modern-js-LC59" class="blob-code blob-code-inner js-file-line">            <span class="pl-k">for</span>(<span class="pl-k">let</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> <span class="pl-smi">frontVertexAdjLst</span>.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="file-graph-modern-js-LC60" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">if</span> (color[frontVertexAdjLst[i]] <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>white<span class="pl-pds">'</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="file-graph-modern-js-LC61" class="blob-code blob-code-inner js-file-line">                    <span class="pl-smi">stack</span>.<span class="pl-c1">push</span>(frontVertexAdjLst[i]);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="file-graph-modern-js-LC62" class="blob-code blob-code-inner js-file-line">                }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="file-graph-modern-js-LC63" class="blob-code blob-code-inner js-file-line">            }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="file-graph-modern-js-LC64" class="blob-code blob-code-inner js-file-line">            color[stackFrontVertex] <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>black<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="file-graph-modern-js-LC65" class="blob-code blob-code-inner js-file-line">        }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="file-graph-modern-js-LC66" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="file-graph-modern-js-LC67" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/scriptonian/403045846a16c1d321fcf81639236359/raw/0af3bd262f90e051fd0e69cd2c2adaf769584581/graph-modern.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/scriptonian/403045846a16c1d321fcf81639236359#file-graph-modern-js">graph-modern.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+  
+  
+  
+  
+  
+
+  <script src="./css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js.download"></script>
+
+
+
+ 
+</body></html>

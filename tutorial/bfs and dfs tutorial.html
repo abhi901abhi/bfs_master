@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.scriptonitejs.com/javascript-graphs/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://www.scriptonitejs.com/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://www.scriptonitejs.com/wp-content/themes/jgt_blogbox/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	<title>Javascript Graphs - ScriptoniteJS</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Discover the amazing world of graphs and its applications. In this post, you will learn how to implement your own graphs using javascript as a language.">
+<link rel="canonical" href="http://www.scriptonitejs.com/javascript-graphs/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript Graphs - ScriptoniteJS">
+<meta property="og:description" content="Discover the amazing world of graphs and its applications. In this post, you will learn how to implement your own graphs using javascript as a language.">
+<meta property="og:url" content="http://www.scriptonitejs.com/javascript-graphs/">
+<meta property="og:site_name" content="ScriptoniteJS">
+<meta property="article:tag" content="breadth first search">
+<meta property="article:tag" content="depth first search">
+<meta property="article:tag" content="javascript graph">
+<meta property="article:tag" content="javascript graph shortest path">
+<meta property="article:section" content="Javascript">
+<meta property="article:published_time" content="2017-10-31T21:34:56+00:00">
+<meta property="article:modified_time" content="2018-01-14T00:05:25+00:00">
+<meta property="og:updated_time" content="2018-01-14T00:05:25+00:00">
+<meta property="og:image" content="http://www.scriptonitejs.com/wp-content/uploads/2017/10/algorithms_template.jpg">
+<meta property="og:image:width" content="660">
+<meta property="og:image:height" content="330">
+<meta property="og:image:alt" content="Javascript Graph Algorithms">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Discover the amazing world of graphs and its applications. In this post, you will learn how to implement your own graphs using javascript as a language.">
+<meta name="twitter:title" content="Javascript Graphs - ScriptoniteJS">
+<meta name="twitter:image" content="http://www.scriptonitejs.com/wp-content/uploads/2017/10/algorithms_template.jpg">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="ScriptoniteJS » Feed" href="http://www.scriptonitejs.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="ScriptoniteJS » Comments Feed" href="http://www.scriptonitejs.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="ScriptoniteJS » Javascript Graphs Comments Feed" href="http://www.scriptonitejs.com/javascript-graphs/feed/">
+		<script async="" src="./bfs and dfs tutorial_files/analytics.js.download"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.scriptonitejs.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./bfs and dfs tutorial_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./bfs and dfs tutorial_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./bfs and dfs tutorial_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="jgtblogbox-fonts-css" href="./bfs and dfs tutorial_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="jgtblogbox-style-css" href="./bfs and dfs tutorial_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='jgtblogbox-ie-css'  href='http://www.scriptonitejs.com/wp-content/themes/jgt_blogbox/css/ie.css?ver=1.7' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="./bfs and dfs tutorial_files/jquery.js.download"></script>
+<script type="text/javascript" src="./bfs and dfs tutorial_files/jquery-migrate.min.js.download"></script>
+<link rel="https://api.w.org/" href="http://www.scriptonitejs.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.scriptonitejs.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.scriptonitejs.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.0.3">
+<link rel="shortlink" href="http://www.scriptonitejs.com/?p=1261">
+<link rel="alternate" type="application/json+oembed" href="http://www.scriptonitejs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.scriptonitejs.com%2Fjavascript-graphs%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.scriptonitejs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.scriptonitejs.com%2Fjavascript-graphs%2F&amp;format=xml">
+
+<style type="text/css" id="custom-colors-css">a,.nav-menu li:hover > a,.nav-menu .current-menu-item > a,.nav-menu .current-menu-ancestor > a,.nav-menu .current_page_item > a,.nav-menu .current_page_ancestor > a,#menu-toggle.icon-cross,#search-toggle.icon-cross,#menu-toggle:hover,#search-toggle:hover,.entry-title a:hover,.page-title .highlight,.required,.social-links a:hover,.copyright a:hover, .sticky.format-link .featured-post {	color: ; } button,input[type="submit"],input[type="button"],input[type="reset"],.site-title .logo-text,.read-more .more-link:hover,.format-link,#cancel-comment-reply-link:hover,.paging-nav .page-numbers:hover,.paging-nav .current,.comment-nav .page-numbers:hover,.comment-nav .current,.post-nav a:hover,.page-link,.page-links a:hover .page-link,.rslides_nav:hover,.widget_tag_cloud a:hover,#wp-calendar tbody a:hover, .sticky .featured-post, .infinite-scroll #infinite-handle span:hover { background: ; } .nav-menu .sub-menu,.nav-menu .children { border-top-color: ; }</style>
+
+<!-- BEGIN ExactMetrics v5.3.7 Universal Analytics - https://exactmetrics.com/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-104070114-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END ExactMetrics Universal Analytics -->
+		<style type="text/css" id="wp-custom-css">
+			/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+
+		</style>
+	</head>
+<body class="post-template-default single single-post postid-1261 single-format-standard" tcap-name="main" style="">
+	<div class="site-top">
+		<nav class="site-nav" role="navigation">
+			<div class="inner">
+				<h3 id="menu-toggle" class="icon-list">Menu</h3>
+				<div class="nav-menu"><ul id="menu-main-menu" class="menu"><li id="menu-item-944" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-944"><a href="http://scriptonitejs.com/">Home</a></li>
+<li id="menu-item-945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-945"><a href="http://www.scriptonitejs.com/i-am-konstantin/">About Me</a></li>
+<li id="menu-item-1060" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1060"><a href="http://www.scriptonitejs.com/scriptonitejs/">ScriptoniteJS</a></li>
+<li id="menu-item-1059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1059"><a href="http://www.scriptonitejs.com/archives/">Archives</a></li>
+<li id="menu-item-1061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1061"><a href="http://www.scriptonitejs.com/contact/">Contact</a></li>
+</ul></div>				<a href="http://www.scriptonitejs.com/javascript-graphs/#" id="search-toggle" class="icon-search"><span class="screen-reader-text">Search</span></a>
+			</div><!-- .inner -->
+		</nav><!-- .site-nav -->
+		<div class="search-box">
+			<div class="inner">
+				<form role="search" method="get" class="search-form" action="http://www.scriptonitejs.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>			</div><!-- .inner -->
+		</div><!-- .search-box -->
+	</div><!-- .site-top -->
+	<header class="site-header" role="banner">
+		<div class="inner">
+			<h1 class="site-title"><a href="http://www.scriptonitejs.com/" rel="home" class="logo-text">ScriptoniteJS</a></h1>
+					</div><!-- .inner -->
+	</header><!-- .site-header -->	<div id="content" class="site-content">
+		<main id="main" class="site-main inner" role="main">
+							<article id="post-1261" class="post-1261 post type-post status-publish format-standard has-post-thumbnail hentry category-javascript tag-breadth-first-search tag-depth-first-search tag-javascript-graph tag-javascript-graph-shortest-path">
+					<div class="featured-image">
+											<img width="660" height="330" src="./bfs and dfs tutorial_files/algorithms_template.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Javascript Graph Algorithms" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/10/algorithms_template.jpg 660w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/algorithms_template-300x150.jpg 300w" sizes="(max-width: 660px) 100vw, 660px">									</div>
+				<div class="entry-box">
+		<header class="entry-header">
+			<h1 class="entry-title">Javascript Graphs</h1>			<div class="entry-meta">
+				<span class="byline"><span class="author vcard"><a class="url fn n" href="http://www.scriptonitejs.com/author/scriptonian/" rel="author">scriptonian</a></span> · </span><a href="http://www.scriptonitejs.com/javascript-graphs/" rel="bookmark"><time class="published" datetime="2017-10-31T17:34:56+00:00">10/31/2017</time></a> · <a href="http://www.scriptonitejs.com/javascript-graphs/#respond">Leave a Reply</a>			</div>
+		</header><!-- .entry-header -->
+		<div class="entry-content">
+			<p>Graphs are mind blowing! The first time i studied graphs and its applications, i was simply in awe. The first thing one might think when they hear graphs is to think of some kind of chart or diagram. But that is not the case. They are actually derived from the study of networks and are an extremely hot topic these days. We have all used graph applications without even realizing it. Social media and social networks (Facebook, Twitter, Instagram, etc), the internet, etc. are applications of Graphs, and are used to model many real world systems, like airlines, road traffic, communication, etc. Graphs also fall under the non-linear data structures, but take things to a whole new level. You can even think of linked lists and the binary tree data structure as a form of graph (so we have been using graph applications without even realizing it). Linked lists have node connections from one node directly to another node, and binary trees have one node which could potentially connect to 1 or a maximum of 2 nodes. With graphs any node could potentially link to another node within the collection. So it is not limited as linked lists or Binary Trees. Lets look at our first graph.<span id="more-1261"></span></p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20170916_104457/" rel="attachment wp-att-1264"><img class="aligncenter size-large wp-image-1264" src="./bfs and dfs tutorial_files/IMG_20170916_104457-1024x919.jpg" alt="javascript graphs" width="720" height="646" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104457-1024x919.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104457-300x269.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104457-768x689.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104457-960x862.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>In our collection, look at the link between the nodes. K is linked to T, M and J. Notice that M has a link to all other nodes. This is how social networks are built. Lets transform this diagram again.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20170916_104849/" rel="attachment wp-att-1265"><img class="aligncenter size-large wp-image-1265" src="./bfs and dfs tutorial_files/IMG_20170916_104849-1024x943.jpg" alt="javascript graphs" width="720" height="663" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104849-1024x943.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104849-300x276.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104849-768x707.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_104849-960x884.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>In a social network like facebook, friends have connections. Kofi is friends with Tani, Max, Julie. However he is not directly linked to Tarik (thus they are not friends). Then facebook decides to use the fact that 2 friends of Kofi (Julie and Max) are friends with Tarik, so lets us “suggest” Kofi to be friends with Tarik (chances are they know each other). See the potential power behind graphs? Behind the scenes we have enquire many things about the nature of our graph, and use that to solve other problems. We haven’t even scratched the surface of what graphs are capable of. Before we dive deeper, lets look at some graph terminology.</p>
+<h2>Terminology and Definitions</h2>
+<p>The idea of graphs are derived from theories in mathematics. So you are most definitely going to be hearing some mathematical terms. But worry not, because everything is going to be explained to you (i will do my very best). Lets look at a diagram.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20170916_140437/" rel="attachment wp-att-1269"><img class="aligncenter size-large wp-image-1269" src="./bfs and dfs tutorial_files/IMG_20170916_140437-1024x657.jpg" alt="undirected graph" width="720" height="462" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140437-1024x657.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140437-300x192.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140437-768x492.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140437-960x616.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>We have already looked a diagram similar to figure A. Only this time we have added some labels to it. So far in our studies in data structures, we have talked about collections of nodes. In graphs, nodes are called <strong>vertices </strong>(and a node is called a vertex). So we will not be calling them as nodes anymore. The link between two nodes is called an&nbsp;<strong>edge.&nbsp;</strong>Notice that the edges in this diagram do not have direction. Graphs like these are called <strong>undirected</strong> graphs. Let look at a diagram with edges that have direction.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20170916_140447/" rel="attachment wp-att-1268"><img class="aligncenter size-large wp-image-1268" src="./bfs and dfs tutorial_files/IMG_20170916_140447-1024x583.jpg" alt="directed graph" width="720" height="410" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140447-1024x583.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140447-300x171.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140447-768x437.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170916_140447-960x546.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>See what i mean? The connection between two vertices here has direction (things can only flow in one way). In figure A, there is no direction, so it means you can move in either direction. Notice that both figures also have numbers on the edges. This is optional. Graphs that have these numbers are called <strong>weighted</strong> graphs. These numbers are sometimes used to calculate for e.g distances between cities or even streets (it could be anything really, as long as there are edges between the vertices). The number could even represent priority, in say a navigation system, where a higher number means a more/less reliable route. Notice that not all vertices in our figure has edges. If all vertices are connected by an edge, we call that a <strong>path</strong>. Other terminology you might hear are <strong>cycle,</strong> <strong>strongly</strong> connected graph, etc. A cycle is a path that starts and ends at the same vertex. If there are no cycles its called acyclic graph(the above diagram is such). A directed graph with no cycles is called a <strong>directed acyclic graph</strong> (DAG), and many important problems can be solved if the graph is represented this way.</p>
+<p>I mentioned that linked lists are implementations of graphs. So a singly linked list would be a directed graph, where a doubly would be an undirected graph. It is also worth mentioning that you wouldn’t find a graph class in your programming language. If you are using C, Java, C#, Ruby, Python etc there is no Graph class. However you will find implementation of it, like i mentioned with Linked Lists, binary trees etc. They are all derived from this mathematical concept!</p>
+<p>Now that you have an idea of Graphs in mind, how would you implement your own Graph? You could look into the real world and try to model objects in terms of Graphing terminology. Think of the country you live in for example. Your city could be a vertex and the roads could be edges.. With that in mind you can visualize different roads having certain weights when you connect the vertices. If i had New York and New Jersey in mind, i could represent those as vertices and I-95 to be the edge connecting the two states(as one potential route – weighted). The weights could even be a presentation of speed limited factored into the algorithm to determine best route for journey. Airline flight systems can be modeled based on graphs, where the edge (perhaps distances between cities can be factored into how much the trip would cost, or even how long the journey is). Other great examples are local area networks (LAN) or wide area networks (WAN). Remember the internet is an application of graphs. Where routers that sit on a network can communicate and route messages to other networks. If one router were to go down, graph algorithms are used to determine closest neighbor routers that can be communicated with instead. In other words the shortest distance between vertices can be calculated and much more (we will learn about shortest path soon). Do you see more potential with this data structure? Its applications are vast and truly endless.</p>
+<h2>Graph representation</h2>
+<p>In all the data structures we have looked at in this series, we have always found a way to represent it by class. That representation was based on the way we described things for the structure. Lets find a way to describe Graphs so we can write code that describes it. It turns out that there are 3 ways: <strong>Adjacency Matrix, Adjacency List and Adjacency Set</strong>. We will not be a talking about Adjacency Set in this post (same as an adjacency list only using sets). So what do we know about a Graph? We know that within a graph, there are vertices. We also know that there are edges between these vertices (remember vertices are like nodes in a collection). Take facebook for example, a vertex could be your friend (with a name, gender and other properties). An edge however connects two vertices. It is an ordered pair represented in the form&nbsp;<strong><em>(u, v)</em></strong>. This means that there is an edge from U to vertex V. Remember the edge in a graph system (depending on that system) could represent things like, a distance, cost, value etc. It is worth knowing that in a directed graph, (u, v) is not the same as (v, u). This is because the cost of going from A to B might be different than going the opposite way. This is not so for undirected graphs, in which case (u, v) is the same as (u, v). The direction plays a role. In undirected graphs, it works both ways, but for directed graphs it works only one way (depending is where the direction is pointed to).</p>
+<p>An Adjacency Matrix is simply a 2 dimensional array. And as you already know a 2D array is organized as a matrix, with a number of rows and columns. In this matrix, if there is an edge from u to v, we represent it with 1, and zero if otherwise. So having&nbsp;<strong><em>adjMatrix[u, v] = 1</em> </strong>means that there is an edge from u to v. And&nbsp;<strong><em>adjMatrix[u, v] = 0</em></strong> means there isn’t. Take a look at a diagram below.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20170919_191358/" rel="attachment wp-att-1275"><img class="aligncenter size-large wp-image-1275" src="./bfs and dfs tutorial_files/IMG_20170919_191358-1024x645.jpg" alt="adjacency matrix" width="720" height="454" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170919_191358-1024x645.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170919_191358-300x189.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170919_191358-768x483.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170919_191358-960x604.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>Above we have figure A and figure B which represent a Graph (directed and undirected). We have our edges represented as well (1’s and 0’s). Notice that in the directed graph (figure A) that <em><strong>(A, B)</strong></em> is 1 and <em><strong>(B, A)</strong></em> is zero if you follow the direction. But for the undirected its 1 in both cases (undirected graphs said to be always symmetric). It should be noted that working with an Adjacency Matrix, turns out to be not efficient as it consumes a lot of memory, and has a space time complexity of O(V^2). Adding a vertex to the structure is O(V^2). Removing on the other hand is O(1). You can dive more into writing this implementation if you want but we wont be doing that in this post (perhaps i might consider adding this later on in the future). We will favor the Adjacency List approach instead and write our class based on it. Please note that you might also want to consider using an adjacency set instead of a list. The set is faster than the list, but a list makes it easier to teach the concepts. They do the same thing, only one might be a bit faster.</p>
+<p>In an Adjacency List, all vertices that are connected to another vertex are stored in a list (called adjacency list). So in an adjacency set, set use a set. For an adjacency list, we can use an Array, Linked List, Dictionary/Map, etc to store the list of adjacent vertices. Think of it this way, for each vertex we use a linked list (or array, or other data structure) to store the connected vertices. Look at the diagram below:</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20170920_230505/" rel="attachment wp-att-1276"><img class="aligncenter size-large wp-image-1276" src="./bfs and dfs tutorial_files/IMG_20170920_230505-1024x774.jpg" alt="adjacency list" width="720" height="544" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170920_230505-1024x774.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170920_230505-300x227.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170920_230505-768x580.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/IMG_20170920_230505-960x725.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a><br>
+I hope you see what is going on in this diagram. The list in Adjacency list comes from the list you see connected to each vertex. In figure A for example, B &amp; D are connected to A. So you see to the right of diagram that A -&gt; B, D. The Adjacency list of A is B &amp; D. Notice here that the diagram is an undirected graph. What is it was a directed graph? Let try to picture this. Suppose in figure A, the vertex A has an edge pointing to B and D, then we would have A -&gt; B, D. Next we have a edge, from B to C. Since there is an direction from A to B, B now only points to C. So its adjacency list will be B -&gt; C, and NOT B -&gt; A, C like we have in the diagram above. Lets write a basic class structure.</p>
+<h2>The Graph Class</h2>
+<p>Lets write some code !</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_BwLJwo" src="./bfs and dfs tutorial_files/BwLJwo.html" scrolling="no" frameborder="0" height="503" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="Javascript Graph - Base" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p>The class above describes what we have been talking about Graphs. Within our class we have two properties, one for vertices and the other for our adjacency list (which holds our edges or connections between vertices). Notice that we store our vertices in an array. Since each vertex has an adjacency list, we use a map to store the vertex name as the maps key, and the value will be an array (holding the list). That should be easy to understand.</p>
+<h2>addVertex &amp; addEdge</h2>
+<p>Next lets implement methods that enable us to add vertices and edges to our Graph.</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_VMKXgd" src="./bfs and dfs tutorial_files/VMKXgd.html" scrolling="no" frameborder="0" height="1528" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="Javascript Graph - addVertex &amp; addEdge" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p><strong>addVertex</strong> takes a vertex that needs to be added to the graph as a parameter, and adds that to a vertices array. Anytime we call addVertex, we also want to create an adjacency list for that newly added vertex. Remember we are using Maps here as our adjacency list, so the key of the map will be the same name as the vertex passed into the function (so we can reference it by name). The value will be set to an empty array for newly added vertices. Next we have a helper method to get the adjacency list of a vertex (the one stored in the map object – Makes sense as we need to have a way to get that list for any vertex). We tell it which vertex we want by passing in the name as a key, and an array object is returned when the function is invoked. We then push onto that array (which is the adjacency list). This push is done in our <strong>addEdge</strong> method. Remember that edges connect vertices. In addEdge all we are doing is adding to the adjacency lists for any given vertex. Hope this is clear enough. Now let us test what we have built!</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_OxRGmL" src="./bfs and dfs tutorial_files/OxRGmL.html" scrolling="no" frameborder="0" height="517" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="OxRGmL" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p>Here we put our Graph so far to the test. We instantiate a new Graph class and create an array of vertices we want to add to our Graph. We add them to the graph one by one using an array helper calling our addVertex method on each iteration. Next we setup our adjacency list by calling addEdge. Here my goal was to use the same information we used in Figure B of the last diagram, where i introduced the adjacency diagram. When we run this in the console:</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/screen-shot-2017-09-22-at-10-52-47-pm/" rel="attachment wp-att-1284"><img class="aligncenter size-full wp-image-1284" src="./bfs and dfs tutorial_files/Screen-Shot-2017-09-22-at-10.52.47-PM.png" alt="javascript graph test" width="505" height="424" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-22-at-10.52.47-PM.png 505w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-22-at-10.52.47-PM-300x252.png 300w" sizes="(max-width: 505px) 100vw, 505px"></a></p>
+<p>See in our Graph we have entries in our adjacency list (which is a map). You can also see that K has a list of T, M &amp; J. This was exactly what we saw earlier. So our graph is working so far. Let us make it a bit easier to display this data. We will add a <strong>toString</strong> method to our class, which outputs all the adjacency lists within our graph.</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_aLBONX" src="./bfs and dfs tutorial_files/aLBONX.html" scrolling="no" frameborder="0" height="1256" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="Javascript Graph - toString()" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p>The <strong>toString</strong> method should be self explanatory even though a bit tricky. All we want to do here is go through all the vertices and output its adjacency list. But the tricky part is working with Map/Dictionaries when it comes to iteration. Look at the ES2015 and above implementation. So dead simple (3 lines of code vs 17 lines or so for the ES5 version). The ES5 version is quite complex, just to display each key with its array values. Finally here is the output of toString.<a href="http://www.scriptonitejs.com/javascript-graphs/screen-shot-2017-09-23-at-11-04-31-am/" rel="attachment wp-att-1287"><img class="aligncenter size-full wp-image-1287" src="./bfs and dfs tutorial_files/Screen-Shot-2017-09-23-at-11.04.31-AM.png" alt="Javascript Graph toString" width="456" height="293" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-23-at-11.04.31-AM.png 456w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/Screen-Shot-2017-09-23-at-11.04.31-AM-300x193.png 300w" sizes="(max-width: 456px) 100vw, 456px"></a></p>
+<p>Lets move on and learn how to traverse graphs</p>
+<h2>Searching a Graph</h2>
+<p>Searching a data structure is always important, as it helps us solve problems based on the collection we have. We do this because we want to find a node(s) of concern. When designing graph applications one might want to know which routes to take to reach other vertices. For example, which roads take you to the highway (in a map application). Earlier on i talked about cycles within a graph. Our ability to traverse graphs allows us to come up with conclusions on the graph (it allows exploration). For example check to see if there are any cycles within the graph. Web crawling, friend finder, friends of friends, network broadcasting (a packet will have to explore a graph, which is the network and deliver the package to nodes on a network), garbage collection, are all graphing algorithms at play! There are two algorithms mainly used to search a graph: <strong>Breadth First Search (BFS) &amp; Depth First Search (DFS)</strong>.</p>
+<p>Lets look at these at a high level. When searching graphs we have to have a starting vertex. From there we go through its edges and mark vertices we come across during our search. Lets dive deeper. We track each vertex that we have or have not visited. To know that a vertex is completely explored we need to look at the edges connected to the vertex. If an edge has not been visited we add that to a list of vertices to be visited later (another data structure). In a BFS we store the list of vertices to be visited in a Queue (FIFO), where for a DFS it would be a Stack (LIFO). When marking vertices, colors are used. <strong>White</strong> is for vertices that have not been visited (so all vertices are therefore initialized to white on application start). <strong>Grey</strong> for those that have been visited but not fully explored, and <strong>black</strong> for completed explored vertices. For this reason we visit a vertex at most twice to ensure its complete exploration.</p>
+<p>Here is the difference breadth-first and depth first: In a BFS, all nodes at the same distance from the origin are visited together, whiles in DFS, all nodes in certain direction from the origin is visited together.</p>
+<h2>Breadth-First Search</h2>
+<p>Before we dive into code, i think its best to know how each algorithm works using diagrams. This is so everything is crystal clear to you before you write a single line of code. There is a lot going on here, but i think its necessary to have these here for completeness. If you want a more visual presentation check out this <a href="https://www.youtube.com/watch?v=bIA8HEEUxZI" target="_blank" rel="noopener">video</a>, my diagrams are more geared towards examples already used in this post (but the illustrations in the video may help as well). It will be a good idea to print these diagrams, and use them as you continue reading this post.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/a/" rel="attachment wp-att-1292"><img class="aligncenter size-large wp-image-1292" src="./bfs and dfs tutorial_files/a-1024x795.jpg" alt="bread-first search javascript" width="720" height="559" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/a-1024x795.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/a-300x233.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/a-768x597.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/a-960x746.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/b/" rel="attachment wp-att-1293"><img class="aligncenter size-large wp-image-1293" src="./bfs and dfs tutorial_files/b-1024x782.jpg" alt="bread-first search javascript" width="720" height="550" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/b-1024x782.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/b-300x229.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/b-768x586.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/b-960x733.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>&nbsp;</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/c/" rel="attachment wp-att-1291"><img class="aligncenter size-large wp-image-1291" src="./bfs and dfs tutorial_files/c-1024x795.jpg" alt="bread-first search javascript" width="720" height="559" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/09/c-1024x795.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/c-300x233.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/c-768x596.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/09/c-960x745.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>We have seen a portion of this diagram before in other examples. However this time we are using it to show you how our BFS algorithm will take place given such a graph (a step by step approach). The BFS algorithms works its way in layers (dont forget the difference between BFS and DFS). It begins by visiting a starting vertex (which gets added to a queue), and visits all its adjacency list vertices for that vertex (same level). Vertices on the adjacency list for the vertex being explored are added to the queue as they are visited and when the time is right, dequeued once the vertex is fully explored (marked completed). &nbsp;In figure A we start with a clean slate. All vertices are marked as white (there are no marked colors in the diagram so bare with me here). Our search starts from K. Every time we visit a vertex we have not visited before we print the value to the console as well as mark it grey. We also push it onto our queue as well as print the name of the vertex being visited. So if its already visited we don’t push onto the queue (we will know because of color). In the figure #b, K is pushed onto the queue. From here we dequeue whatever is at the top of our queue and enqueue all of its adjacency list vertices onto our queue. We repeat this until all vertices are visited. We dequeue whatever is the at the front of the queue and perform our operations: Check to see if it has adjacency lists vertices that have not be visited and add them to the queue. When done we mark the vertex as black. Lets code BFS method.</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_YrNyoY" src="./bfs and dfs tutorial_files/YrNyoY.html" scrolling="no" frameborder="0" height="2366" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="Javascript Graph - Breadth First Search" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p>With this code implemented if we decide to traverse are Graph by calling the breathFirstSearch method, here is the output we get.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/screen-shot-2017-10-08-at-12-48-51-pm/" rel="attachment wp-att-1303"><img class="aligncenter size-full wp-image-1303" src="./bfs and dfs tutorial_files/Screen-Shot-2017-10-08-at-12.48.51-PM.png" alt="breath first search" width="484" height="147" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/10/Screen-Shot-2017-10-08-at-12.48.51-PM.png 484w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/Screen-Shot-2017-10-08-at-12.48.51-PM-300x91.png 300w" sizes="(max-width: 484px) 100vw, 484px"></a></p>
+<p>As you can see our method traverses over all vertices in our graph. Lets take a closer look at the code details. We start off by initializing some basic properties. We setup our queue and color array and we initialize all vertices in the network to have a color of white. Then we begin our enqueueing process. As long as the queue is not empty, we keep running the same logic. We dequeue what was just enqueued and get its adjacency list. We run through those vertices and enqueue only the ones that have a color of white (means its never visited). When we are done we set color of the dequeued vertex to black.</p>
+<h2>Finding the shortest path</h2>
+<p>Probably one of the most common tasks performed when working with graphs. How do we find the shortest possible path from vertex U to V? What if we wanted to find the shortest paths from vertex U to all other vertices in our graph? These help us solve problems like whats the best route to take to a destination as an example. You will find this algorithm used a lot in the transportation and scheduling industries, where it is necessary to find the most efficient route a product should take to reach a customer. Uber, Google and Amazon are big on using this algorithm (my <em><strong>dream</strong></em> companies, facebook too).</p>
+<p>To understand the shortest path algorithm we have to understand what the distance table is. It is a data structure through which the algorithm operates through. Understanding the distance table is crucial as it is used in both unweighted and weighted graph systems for calculating the shortest path. We have not spoken much about weighted graphs, but we will be using <strong>Dijkstra’s algorithm</strong> to solve for shortest paths. This relies on the distance table. Lets take a look at what it looks like</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20171014_155658/" rel="attachment wp-att-1309"><img class="aligncenter size-large wp-image-1309" src="./bfs and dfs tutorial_files/IMG_20171014_155658-1024x592.jpg" alt="Shortest Path Distance Table" width="720" height="416" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_155658-1024x592.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_155658-300x173.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_155658-768x444.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_155658-960x555.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>Lets talk about the distance table above. It consists of 3 columns. The first column is used to store all vertices in our graph. To the far right we see our graph system (the same one we have been using in this post). The second column hold the shortest distance from the source node to that node. In the diagram above we use ‘K’ as the source node, and since there is no distance from K to K, it is initialized with zero. The remaining distances are always initialized with infinity or -1. The third column (Preceding Node) holds the previous node we encounter before the destination node. With out table initialized let us look at our distance table populated.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20171014_160715/" rel="attachment wp-att-1310"><img class="aligncenter size-large wp-image-1310" src="./bfs and dfs tutorial_files/IMG_20171014_160715-1024x619.jpg" alt="Graph Distance Table" width="720" height="435" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_160715-1024x619.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_160715-300x181.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_160715-768x464.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171014_160715-960x581.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>Lets take a look at a more complete distance table. In the above table, K is our source (or where we are starting from). The distance of K to K is 0, K to T is 1, K to J is 1, K to N is 2, K to F is 2, etc. In an unweighted graph we assume that the weights betweens vertices are all 1. So the distance being referred to here is the number of hops from source to destination. From K we take 2 hops to get to N, etc. Finally in our last column, where we define our preceding node, or the node that was traversed last before the destination node. Starting from K as a source, the preceding node to T, M, J are all K. To get to N or F from the source (K), we have to go through M. This is why you have the following vertices in the preceding node column. It is important to note that the distance table always have a source. So anytime your source changes, your distance table will be different.</p>
+<p>In order to find the shortest path a method known as <strong>backtracking</strong> is employed. In order to backtrack, you are most certainly going to need a distance table for that. So how do we get this distance table from what we have done so far? It turns out that all we have to do is modify our BFS method to return the distance table data. We can use this data to help us find the shortest path. Lets look at another diagram where we want to find the shortest path from K to N to illustrate how the distance table is going to help us.</p>
+<p><a href="http://www.scriptonitejs.com/javascript-graphs/img_20171015_110121/" rel="attachment wp-att-1312"><img class="aligncenter size-large wp-image-1312" src="./bfs and dfs tutorial_files/IMG_20171015_110121-1024x723.jpg" alt="Javascript Shortest Path" width="720" height="508" srcset="http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171015_110121-1024x723.jpg 1024w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171015_110121-300x212.jpg 300w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171015_110121-768x542.jpg 768w, http://www.scriptonitejs.com/wp-content/uploads/2017/10/IMG_20171015_110121-960x677.jpg 960w" sizes="(max-width: 720px) 100vw, 720px"></a></p>
+<p>Backtracking is normally done using a stack. We start from our destination node N (which we place in the stack – remember we are working backwards, hence backtracking). As long as the source and destination are not the same, we find the preceding node N which is M. We place that into the stack as well. Then we find the preceding node to M, which is K. We place K on our stack. Then we find K and notice that its distance is zero (meaning its the source). At the point we have some items in our stack. We pop the items off and get a result of K-M-N as the shortest path from K to N. Simple right? You can choose to use an array if you like. You can push to the front of the array as you move through the distance table, or push to the back and use a method like reverse to get the final path.</p>
+<p>I will implement 2 shortestPath methods ( how to find the shortest path from one vector to all vectors and the path from vector U to V for example (specific paths) ). Also it is worth noting that the shortest path algorithms have a few variations. There are shortest path algorithms that use weighted or unweighted graphs ( we will be looking at the unweighted algorithm — where all path weights equal 1). Lets just straight in ( here are both ES5 &amp; 2015 versions )</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_QqVZyY" src="./bfs and dfs tutorial_files/QqVZyY.html" scrolling="no" frameborder="0" height="8059" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="Javascript Graph - Shortest Path" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p>There is a lot of code there! But we have talked about everything already. The first thing to note is how we are creating our distance table. Previously we initialize all our color to white before we did our BFS. Now we are adding to that color function and initializing the distance and preceding node tables. We set all distances to -1 expect whatever our source or starting vertex. We also set our preceding nodes by creating an array of objects with key as the vertex and its value as the preceding node. All the nodes are set to null except whatever the starting vertex is, which will be itself.&nbsp; Then within our forEach method where we set the color to grey, we increase the edge distance starting from 1 if its -1 (what it was initialized to). Then we return an object at the end of our BFS which contains all the distances and preceding nodes.</p>
+<p>We start off with the <strong>shortest_path</strong> method. This method takes a BFS because we need to use our distance table in our to find the shortest path. The method also takes the source and destination vertices. We create a stack to store our paths and begin pushing to it (see github code comments). Earlier on i said we start with the destination (diagram above), for eg if we want to find the shortest path from K to N, we start from N (adding it to the stack). Then we get its preceding node and begin backtracking. As long as the preceding node is not null or not the source, we add it to our stack. If that is not the case then chances are the preceding node is null or its equal to the source. At this point we add that to the path.&nbsp; When done we pop items from the stop of the stack to get our final string.&nbsp;Printing the shortest path from source to all other nodes is done using the already exist&nbsp;<strong>shortest_path</strong> method. That method should be self explanatory (only a few lines of code). Whew, lets me on.</p>
+<h2>Depth-First Search (DFS)</h2>
+<p>DFS starts its search from an initial vertex and follows that path until it reaches the last vertex. After which it backtracks and follows the next path. It does this until all vertices are visited and there is no path left. Whiles the BFS uses a queue to store visited vertices, a DFS uses a stack for this storage. The implementation for DFS are quite similar to BFS even though the underlying data structure is different ( queue vs stack ). We can also use recursion as a way to do depth first search. I will show you both ways (and you can choose which way you like best). Lets take a look at them (in ES5 and ES2015 and above).</p>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_QOwWgL" src="./bfs and dfs tutorial_files/QOwWgL.html" scrolling="no" frameborder="0" height="3337" allowtransparency="true" allowfullscreen="true" allowpaymentrequest="true" name="CodePen Embed" title="Javascript - Depth First Search" class="cp_embed_iframe " style="width: 100%; overflow: hidden; display: block"></iframe></div>
+<p><script async="" src="./bfs and dfs tutorial_files/ei.js.download"></script></p>
+<p>The first thing we will talk about is the <strong>depthFirstWithStack</strong> method (since it is very similar to the breath-first methods we have seen early). It should look very familiar to you. We create an array to hold our colors and initialize all vertices to white. We also create our Stack, which is the underlying data structure we store our adjacency lists in. First we get the starting vertex and we push that onto the stack. As long as its color is not black, it means it has not yet been fully traversed / visited, we change its color to grey, get its adjacency list and put that onto the stack. We keep exploring by popping off the stack (the vertices already added) until there are no more to be explored. Every time we pop an item off the stack we add its adjacency vertices to the stack(if they haven’t already be explored).</p>
+<p>Next, we have a recursive way of doing depth first search. The approach is split over two methods <strong>DFS</strong> and <strong>DFSTraversal</strong>. We first call DFSTraversal which does some initial setup (like we have being always doing), colors initialization etc, and then runs through all the vertices calling the DFS method. Each call to the DFS changes the state of the vertex (from se, not visited to visited), gets the adjacency list of that vertex and recursively calls the DFS method to traverse the remaining vertices.</p>
+<p>Graphs are extremely powerful as you can see. This has probably been the hardest post for me to write (because there were so many new things to learn – the hardest part was to teach it) and we most definitely didn’t cover everything (there are entire books written on the graphs, so we cant possible cover it all in a post. I have put enough here for you to be able to answer just about any question in say an interview question, for example). I learned a lot and i hope you have too. Play around with some of the ideas we have discussed here. Try building your own graph class and maybe even extend it. Add an option to make the graph directed or even be able to specify weights when you add edges (instead of the default of 1, for unweighted graphs). With the realization of what graphs can do i am sure i will be back to write more about other applications using this amazing data struction. I think we may be able to solve many problems using graphs and they have most definitely peaked my interest (more than any data structure thus far). If you read this post, let me know your thoughts. Or if you decide to build something with it, i would love to hear!&nbsp;Feel free to reach out on twitter as well (&nbsp;<a class="DashboardProfileCard-screennameLink u-linkComplex u-linkClean js-nav" href="https://twitter.com/scriptonian" target="_blank" rel="noopener"><span class="username u-dir" dir="ltr">@<b class="u-linkComplex-target">scriptonian</b></span></a> ) if you have any questions.</p>
+<p>This is the last data structure in our series. We have covered it all! Lets move to the topic of <strong>algorithms</strong>!</p>
+		</div><!-- .entry-content -->
+				<footer class="entry-footer entry-meta">
+			Posted in <a href="http://www.scriptonitejs.com/category/javascript/" rel="category tag">Javascript</a>. Tagged <a href="http://www.scriptonitejs.com/tag/breadth-first-search/" rel="tag">breadth first search</a>, <a href="http://www.scriptonitejs.com/tag/depth-first-search/" rel="tag">depth first search</a>, <a href="http://www.scriptonitejs.com/tag/javascript-graph/" rel="tag">javascript graph</a>, <a href="http://www.scriptonitejs.com/tag/javascript-graph-shortest-path/" rel="tag">javascript graph shortest path</a>.		</footer><!-- .entry-meta -->
+			</div><!-- .entry-box -->
+	</article><!-- #post -->				<nav class="post-nav">
+					<h3 class="screen-reader-text">Post navigation</h3>
+					<a href="http://www.scriptonitejs.com/javascript-binary-search-trees/" rel="prev">Previous Post</a><a href="http://www.scriptonitejs.com/javascript-searching-algorithms/" rel="next">Next Post</a>				</nav><!-- .post-nav -->
+				<div id="comments" class="comments-area">
+
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.scriptonitejs.com/javascript-graphs/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://www.scriptonitejs.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="1261" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="be3d0e3cbf"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1547559540814"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+					</main><!-- .site-main -->
+	</div><!-- .site-content -->
+	<footer class="site-footer" role="contentinfo">
+		<div class="inner">
+			<div class="supplementary" role="complementary">
+	<div class="grid">
+			<div class="one-third">
+					<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+											<li>
+					<a href="http://www.scriptonitejs.com/javascript-greedy-algorithms/">Greedy Algorithms</a>
+									</li>
+											<li>
+					<a href="http://www.scriptonitejs.com/dynamic-programming/">Dynamic Programming</a>
+									</li>
+											<li>
+					<a href="http://www.scriptonitejs.com/javascript-sorting-algorithms/">Sorting Algorithms In Javascript</a>
+									</li>
+											<li>
+					<a href="http://www.scriptonitejs.com/javascript-heaps/">Javascript Heaps</a>
+									</li>
+											<li>
+					<a href="http://www.scriptonitejs.com/javascript-searching-algorithms/">Searching Algorithms In Javascript</a>
+									</li>
+					</ul>
+		</aside>		</div>
+				<div class="one-third">
+			<aside id="categories-5" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://www.scriptonitejs.com/category/adobe-aem/">Adobe AEM</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.scriptonitejs.com/category/automation-task-runners-and-build-tools/">Automation, Task Runners and Build Tools</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.scriptonitejs.com/category/client-side-frameworks/">Clientside Application Frameworks</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.scriptonitejs.com/category/frontend-package-management/">Frontend Package Management</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.scriptonitejs.com/category/javascript/">Javascript</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.scriptonitejs.com/category/javascript-algorithms-and-data-structures/">Javascript Algorithms and Data Structures</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="http://www.scriptonitejs.com/category/wordpress/">Wordpress</a>
+</li>
+		</ul>
+</aside>		</div>
+				<div class="one-third">
+			<aside id="search-6" class="widget widget_search"><form role="search" method="get" class="search-form" action="http://www.scriptonitejs.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></aside><aside id="archives-6" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href="http://www.scriptonitejs.com/2018/05/">May 2018</a></li>
+	<li><a href="http://www.scriptonitejs.com/2018/03/">March 2018</a></li>
+	<li><a href="http://www.scriptonitejs.com/2018/01/">January 2018</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/11/">November 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/10/">October 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/09/">September 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/08/">August 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/07/">July 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/06/">June 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/05/">May 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/04/">April 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2017/02/">February 2017</a></li>
+	<li><a href="http://www.scriptonitejs.com/2016/06/">June 2016</a></li>
+	<li><a href="http://www.scriptonitejs.com/2016/02/">February 2016</a></li>
+	<li><a href="http://www.scriptonitejs.com/2016/01/">January 2016</a></li>
+	<li><a href="http://www.scriptonitejs.com/2015/12/">December 2015</a></li>
+	<li><a href="http://www.scriptonitejs.com/2015/11/">November 2015</a></li>
+		</ul>
+		</aside>		</div>
+		</div><!-- .grid -->
+</div><!-- .supplementary -->						<div class="copyright">
+				© 2019 ScriptoniteJS. BlogBox Theme by <a href="http://justgoodthemes.com/">JGT</a>.			</div>
+		</div><!-- .inner -->
+	</footer><!-- .site-footer -->
+	<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.scriptonitejs.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./bfs and dfs tutorial_files/scripts.js.download"></script>
+<script type="text/javascript" src="./bfs and dfs tutorial_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./bfs and dfs tutorial_files/custom.js.download"></script>
+<script type="text/javascript" src="./bfs and dfs tutorial_files/wp-embed.min.js.download"></script>
+<script async="async" type="text/javascript" src="./bfs and dfs tutorial_files/form.js.download"></script>
+
+</body></html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://s.codepen.io/scriptonian/fullembedgrid/OxRGmL?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - A Pen by  kofi</title>
+  
+  
+  
+  
+      <style>
+      body .gist .gist-file {
+    margin-bottom: 0;
+    border: 1px dashed #adb5bd;
+    border-radius: 0;
+}
+
+body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+}
+
+body .gist .blob-wrapper {
+    border-radius: 0;
+}
+
+body .gist .highlight {
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 14px;
+}
+
+body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body .gist tr:first-child td {
+    padding-top: 15px !important;
+}
+
+body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+    color: #ced4da;
+    background-color: #495057;
+    pointer-events: none;
+}
+
+body .gist .gist-meta {
+    display: none;
+}
+
+.gist-meta {
+    display: none;
+    border: none;
+}
+
+body .gist .gist-file {
+    margin-bottom: 10px;
+}
+
+.gist .pl-smi, .gist .pl-s .pl-s1 {
+    color: #66d9ef !important;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  
+<!-- Fonts -->
+<link rel="stylesheet" type="text/css" href="./css(1)">
+
+<!-- 
+Theme Colors:
+https://github.com/lonekorean/gist-syntax-themes/tree/master/stylesheets
+
+Blog: http://codersblock.com/blog/customizing-github-gists/
+-->
+<link rel="stylesheet" type="text/css" href="./monokai.css">
+
+<!-- Gist Link -->
+<script src="./d2bfad3b710d32abcbcd1fec160b4f6d.js.download"></script><link rel="stylesheet" href="./gist-embed-d7f32d1731d95b9cb4d3c880c428c9e9.css"><div id="gist79841582" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-graph-test-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-graph-test-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-graph-test-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>create graph</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-graph-test-js-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">var</span> graph <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Graph</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-graph-test-js-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>create an array of vertices to add to graph</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-graph-test-js-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">var</span> vertices <span class="pl-k">=</span> [<span class="pl-s"><span class="pl-pds">'</span>K<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>T<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>J<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>M<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>N<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>F<span class="pl-pds">'</span></span>];</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-graph-test-js-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>iterate vertices and add each vertex to the graph</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-graph-test-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">vertices</span>.<span class="pl-en">map</span>(<span class="pl-k">function</span>(<span class="pl-smi">vertex</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-graph-test-js-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-smi">graph</span>.<span class="pl-en">addVertex</span>(vertex);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-graph-test-js-LC8" class="blob-code blob-code-inner js-file-line">});</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-graph-test-js-LC9" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-graph-test-js-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span>create edge connections</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-graph-test-js-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>K<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>T<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-graph-test-js-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>K<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>M<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-graph-test-js-LC13" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>K<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>J<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-graph-test-js-LC14" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>T<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>M<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-graph-test-js-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>J<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>M<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-graph-test-js-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>J<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>F<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-graph-test-js-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>M<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>N<span class="pl-pds">'</span></span>);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-test-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-graph-test-js-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">graph</span>.<span class="pl-en">addEdge</span>(<span class="pl-s"><span class="pl-pds">'</span>M<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>F<span class="pl-pds">'</span></span>);</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/scriptonian/d2bfad3b710d32abcbcd1fec160b4f6d/raw/d2d768816d1b31a2252ca5914c9b093d899576cf/graph-test.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/scriptonian/d2bfad3b710d32abcbcd1fec160b4f6d#file-graph-test-js">graph-test.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+  
+  
+  
+  
+  
+
+  <script src="./css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js.download"></script>
+
+
+
+ 
+</body></html>

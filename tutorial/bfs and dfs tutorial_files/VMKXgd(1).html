@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://s.codepen.io/scriptonian/fullembedgrid/VMKXgd?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Javascript Graph - addVertex &amp; addEdge</title>
+  
+  
+  
+  
+      <style>
+      body .gist .gist-file {
+    margin-bottom: 0;
+    border: 1px dashed #adb5bd;
+    border-radius: 0;
+}
+
+body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+}
+
+body .gist .blob-wrapper {
+    border-radius: 0;
+}
+
+body .gist .highlight {
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 14px;
+}
+
+body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+body .gist tr:first-child td {
+    padding-top: 15px !important;
+}
+
+body .gist tr:last-child td {
+    padding-bottom: 15px !important;
+}
+
+body .gist .blob-num {
+    color: #ced4da;
+    background-color: #495057;
+    pointer-events: none;
+}
+
+body .gist .gist-meta {
+    display: none;
+}
+
+.gist-meta {
+    display: none;
+    border: none;
+}
+
+body .gist .gist-file {
+    margin-bottom: 10px;
+}
+
+.gist .pl-smi, .gist .pl-s .pl-s1 {
+    color: #66d9ef !important;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  
+<!-- Fonts -->
+<link rel="stylesheet" type="text/css" href="./css(1)">
+
+<!-- 
+Theme Colors:
+https://github.com/lonekorean/gist-syntax-themes/tree/master/stylesheets
+
+Blog: http://codersblock.com/blog/customizing-github-gists/
+-->
+<link rel="stylesheet" type="text/css" href="./monokai.css">
+
+<!-- Gist Link -->
+<script src="./542e93035504318db02c78a6680e50fa.js.download"></script><link rel="stylesheet" href="./gist-embed-d7f32d1731d95b9cb4d3c880c428c9e9.css"><div id="gist79798390" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-graph-es5-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-graph-es5-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-graph-es5-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">function</span> <span class="pl-en">Graph</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-graph-es5-js-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span> <span class="pl-k">=</span> [];</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-graph-es5-js-LC3" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">this</span>.<span class="pl-smi">adjacentList</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Map</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-graph-es5-js-LC4" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-graph-es5-js-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-graph-es5-js-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-smi">Graph</span>.<span class="pl-c1">prototype</span> <span class="pl-k">=</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-graph-es5-js-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">addVertex</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">v</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-graph-es5-js-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>push vertex into the a vertices array</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-graph-es5-js-LC9" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">push</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-graph-es5-js-LC10" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>for each new vertex we add we need to create an empty array which</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-graph-es5-js-LC11" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>holds the connections to the list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-graph-es5-js-LC12" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">this</span>.<span class="pl-smi">adjacentList</span>.<span class="pl-c1">set</span>(v, []);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-graph-es5-js-LC13" class="blob-code blob-code-inner js-file-line">    },</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-graph-es5-js-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>helper method for getting a vertex from the adjacency list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-graph-es5-js-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">getAdjacencyListVertex</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">vertex</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-graph-es5-js-LC16" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-c1">this</span>.<span class="pl-smi">adjacentList</span>.<span class="pl-c1">get</span>(vertex);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-graph-es5-js-LC17" class="blob-code blob-code-inner js-file-line">    },</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-graph-es5-js-LC18" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>our edges hold connections to vertices. this adds an edge from vertex </span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-graph-es5-js-LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>U to vertext V. this means that V will be in the adjacency list of U</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-graph-es5-js-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">addEdge</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">u</span>, <span class="pl-smi">v</span>){</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-graph-es5-js-LC21" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>first get the u vertex so you can push into its list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-graph-es5-js-LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">var</span> uVertex <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(u),</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-graph-es5-js-LC23" class="blob-code blob-code-inner js-file-line">            vVertex <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-graph-es5-js-LC24" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>Step 1 : push V into U's list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-graph-es5-js-LC25" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">uVertex</span>.<span class="pl-c1">push</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-graph-es5-js-LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>Step 2: push U into V's list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-graph-es5-js-LC27" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">vVertex</span>.<span class="pl-c1">push</span>(u);  </td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-graph-es5-js-LC28" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-es5-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-graph-es5-js-LC29" class="blob-code blob-code-inner js-file-line">};</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/scriptonian/542e93035504318db02c78a6680e50fa/raw/7d41c00c2f96cfc275be6813a4a20cb9eb85284e/graph-es5.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/scriptonian/542e93035504318db02c78a6680e50fa#file-graph-es5-js">graph-es5.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-graph-modern-js" class="file">
+    
+
+  <div itemprop="text" class="blob-wrapper data type-javascript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-graph-modern-js-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-graph-modern-js-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">class</span> <span class="pl-en">Graph</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-graph-modern-js-LC2" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">constructor</span>() {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-graph-modern-js-LC3" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span> <span class="pl-k">=</span> [];</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-graph-modern-js-LC4" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">this</span>.<span class="pl-smi">adjacentList</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Map</span>();</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-graph-modern-js-LC5" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-graph-modern-js-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-graph-modern-js-LC7" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">addVertex</span>(<span class="pl-smi">v</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-graph-modern-js-LC8" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>push vertex into the a vertices array</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-graph-modern-js-LC9" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">this</span>.<span class="pl-smi">vertices</span>.<span class="pl-c1">push</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-graph-modern-js-LC10" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>for each new vertex we add we need to create an empty array which</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-graph-modern-js-LC11" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>holds the connections to the list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-graph-modern-js-LC12" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">this</span>.<span class="pl-smi">adjacentList</span>.<span class="pl-c1">set</span>(v, []);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-graph-modern-js-LC13" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-graph-modern-js-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-graph-modern-js-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>helper method for getting a vertex from the adjacency list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-graph-modern-js-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">getAdjacencyListVertex</span>(<span class="pl-smi">v</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-graph-modern-js-LC17" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-c1">this</span>.<span class="pl-smi">adjacentList</span>.<span class="pl-c1">get</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-graph-modern-js-LC18" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-graph-modern-js-LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>our edges hold connections to vertices. this adds an edge from vertex </span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-graph-modern-js-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-c"><span class="pl-c">//</span>U to vertext V. this means that V will be in the adjacency list of U</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-graph-modern-js-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">addEdge</span>(<span class="pl-smi">u</span>, <span class="pl-smi">v</span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-graph-modern-js-LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>first get the u vertex so you can push into its list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-graph-modern-js-LC23" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">let</span> uVertex <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(u),</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-graph-modern-js-LC24" class="blob-code blob-code-inner js-file-line">            vVertex <span class="pl-k">=</span> <span class="pl-c1">this</span>.<span class="pl-en">getAdjacencyListVertex</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-graph-modern-js-LC25" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>Step 1 : push V into U's list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-graph-modern-js-LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">uVertex</span>.<span class="pl-c1">push</span>(v);</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-graph-modern-js-LC27" class="blob-code blob-code-inner js-file-line">        <span class="pl-c"><span class="pl-c">//</span>Step 2: push U into V's list</span></td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-graph-modern-js-LC28" class="blob-code blob-code-inner js-file-line">        <span class="pl-smi">vVertex</span>.<span class="pl-c1">push</span>(u); </td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-graph-modern-js-LC29" class="blob-code blob-code-inner js-file-line">    }</td>
+      </tr>
+      <tr>
+        <td id="file-graph-modern-js-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-graph-modern-js-LC30" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/scriptonian/542e93035504318db02c78a6680e50fa/raw/7d41c00c2f96cfc275be6813a4a20cb9eb85284e/graph-modern.js" style="float:right">view raw</a>
+        <a href="https://gist.github.com/scriptonian/542e93035504318db02c78a6680e50fa#file-graph-modern-js">graph-modern.js</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+
+  
+  
+  
+  
+  
+
+  <script src="./css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js.download"></script>
+
+
+
+ 
+</body></html>
