@@ -1,9 +1,3 @@
-var api = new TreeSearchApi();
-var data = null;
-var masterData = {};
-
-
-
 var Queue = function () {
     this.items = [];
 };
